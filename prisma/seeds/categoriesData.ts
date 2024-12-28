@@ -1,0 +1,191 @@
+export type Category = {
+  id: number;
+  name: string;
+  color: string;
+  children?: Omit<Category, "color">[];
+};
+
+export const categoriesData: Category[] = [
+  {
+    id: 1,
+    name: "Acara Sosial",
+    color: "",
+    children: [
+      { id: 16, name: "Amal & Donasi" },
+      { id: 17, name: "Hadiah" },
+      { id: 18, name: "Pemakaman" },
+      { id: 19, name: "Pernikahan" },
+    ],
+  },
+  {
+    id: 2,
+    name: "Belanja",
+    color: "",
+    children: [
+      { id: 20, name: "Belanja Bulanan" },
+      { id: 21, name: "Fashion" },
+      { id: 22, name: "Gadget & Elektronik" },
+    ],
+  },
+  {
+    id: 3,
+    name: "Cicilan",
+    color: "",
+    children: [
+      { id: 23, name: "Kendaraan" },
+      { id: 24, name: "Pinjaman" },
+      { id: 25, name: "Rumah" },
+    ],
+  },
+  {
+    id: 4,
+    name: "Hiburan",
+    color: "",
+    children: [
+      { id: 26, name: "Film/Musik" },
+      { id: 27, name: "Games" },
+      { id: 28, name: "Hobi" },
+      { id: 29, name: "Konser" },
+      { id: 30, name: "Layanan Streaming" },
+      { id: 31, name: "Liburan" },
+      { id: 32, name: "Nongkrong" },
+    ],
+  },
+  {
+    id: 5,
+    name: "Keluarga",
+    color: "",
+    children: [
+      { id: 33, name: "Asisten Rumah Tangga" },
+      { id: 34, name: "Kebutuhan Anak" },
+      { id: 35, name: "Kebutuhan Orang Tua" },
+      { id: 36, name: "Laundry" },
+      { id: 37, name: "Peliharaan" },
+      { id: 38, name: "Renovasi" },
+    ],
+  },
+  {
+    id: 6,
+    name: "Kesehatan",
+    color: "",
+    children: [
+      { id: 39, name: "Biaya Dokter" },
+      { id: 40, name: "Gym/Fitness" },
+      { id: 41, name: "Obat" },
+      { id: 42, name: "Olahraga" },
+      { id: 43, name: "Perawatan Diri" },
+    ],
+  },
+  {
+    id: 7,
+    name: "Makanan & Minuman",
+    color: "",
+    children: [
+      { id: 44, name: "Kafe" },
+      { id: 45, name: "Pesanan Makanan" },
+      { id: 46, name: "Restoran" },
+    ],
+  },
+  {
+    id: 8,
+    name: "Pendidikan",
+    color: "",
+    children: [
+      { id: 47, name: "Buku" },
+      { id: 48, name: "Uang Sekolah/Kuliah" },
+    ],
+  },
+  {
+    id: 9,
+    name: "Tabungan",
+    color: "",
+    children: [
+      { id: 49, name: "Dana Darurat" },
+      { id: 50, name: "Investasi" },
+      { id: 51, name: "Liburan" },
+      { id: 52, name: "Pendidikan" },
+      { id: 53, name: "Pensiun" },
+      { id: 54, name: "Rumah/Apartemen" },
+    ],
+  },
+  {
+    id: 10,
+    name: "Tagihan",
+    color: "",
+    children: [
+      { id: 55, name: "Air" },
+      { id: 56, name: "Asuransi" },
+      { id: 57, name: "Biaya Pemeliharaan" },
+      { id: 58, name: "Gas" },
+      { id: 59, name: "Internet" },
+      { id: 60, name: "Kartu Kredit" },
+      { id: 61, name: "Langganan" },
+      { id: 62, name: "Listrik" },
+      { id: 63, name: "Pulsa & Data" },
+      { id: 64, name: "Sewa" },
+      { id: 65, name: "TV Kabel" },
+      { id: 66, name: "Telepon Rumah" },
+    ],
+  },
+  {
+    id: 11,
+    name: "Top Up",
+    color: "",
+    children: [
+      { id: 67, name: "Brizzi BRI" },
+      { id: 68, name: "Dana" },
+      { id: 69, name: "Flazz BCA" },
+      { id: 70, name: "GoPay" },
+      { id: 71, name: "LinkAja" },
+      { id: 72, name: "Mandiri e-money" },
+      { id: 73, name: "OVO" },
+      { id: 74, name: "ShopeePay" },
+      { id: 75, name: "TapCash" },
+    ],
+  },
+  {
+    id: 12,
+    name: "Transportasi",
+    color: "",
+    children: [
+      { id: 76, name: "Bensin" },
+      { id: 77, name: "Biaya Parkir" },
+      { id: 78, name: "Servis Kendaraan" },
+      { id: 79, name: "Taksi/Ojol" },
+      { id: 80, name: "Tiket Perjalanan" },
+      { id: 81, name: "Transportasi Publik" },
+    ],
+  },
+  {
+    id: 13,
+    name: "Pemasukan",
+    color: "",
+    children: [
+      { id: 82, name: "Bonus" },
+      { id: 83, name: "Gaji" },
+      { id: 84, name: "Laba Atas Investasi" },
+      { id: 85, name: "Laba Usaha" },
+      { id: 86, name: "Pendapatan Tamabahan" },
+      { id: 87, name: "Tunjangan/Uang Saku" },
+      { id: 88, name: "Uang Masuk" },
+    ],
+  },
+  { id: 14, name: "Pencairan Pinjaman", color: "" },
+  {
+    id: 15,
+    name: "Lainnya",
+    color: "",
+    children: [
+      { id: 89, name: "Biaya" },
+      { id: 90, name: "Pajak" },
+      { id: 91, name: "Pelunasan" },
+      { id: 92, name: "Tarik Tunai" },
+      { id: 93, name: "Top Up Kartu" },
+      { id: 94, name: "Uang Keluar" },
+      { id: 95, name: "Bunga" },
+      { id: 96, name: "Cashback" },
+      { id: 97, name: "Penggantian Biaya" },
+      { id: 98, name: "Refund" },
+    ],
+  },
+];

@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String @db.VarChar(255)
+  username String @unique @db.VarChar(255)
+  email    String @unique @db.VarChar(255)
+  password String @db.VarChar(255)
+
+  @@map("users")
+}
+
+model Category {
+  id               Int           @id @default(autoincrement())
+  name             String        @db.VarChar(255)
+  color            String        @db.VarChar(255)
+  parent           Category?     @relation("CategoryToCategory", fields: [parentId], references: [id])
+  parentId         Int?          @map("parent_id")
+  // For unique identifier name and parentId even parent name is null
+  uniqueIdentifier String        @unique @map("unique_identifier") @db.VarChar(255)
+  categories       Category[]    @relation("CategoryToCategory")
+  transactions     Transaction[]
+
+  @@map("categories")
+}
+
+model Transaction {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  description String?  @db.VarChar(500)
+  amount      Int
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  Int      @map("category_id")
+  transDate   BigInt   @map("trans_date")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("transactions")
+}
